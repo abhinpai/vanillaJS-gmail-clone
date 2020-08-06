@@ -1,0 +1,14 @@
+{
+  "name": "JSLearning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sass": "node-sass -w -r src/styles/scss/style.scss src/styles/css/style.css",
+    "ts": "tsc -w src/scripts/index.ts"
+  },
+  "dependencies": {
+    "node-sass": "^4.14.1",
+    "require": "^2.4.20"
+  }
+}
