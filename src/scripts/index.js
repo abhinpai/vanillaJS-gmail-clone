@@ -86,13 +86,19 @@ const mails = [
   },
 ];
 
+const onMailSelect = (parent, checked) => {
+  checked
+    ? parent.classList.add('mail-selected')
+    : parent.classList.remove('mail-selected');
+};
 
-const onMailSelect =(parent, checked) =>{
-    checked?  parent.classList.add('mail-selected'): parent.classList.remove('mail-selected')
-} 
+const openInbox = (element) => {
+    console.log(element);
+};
 
 // Get the table
 const inbox = document.getElementById('inbox');
+const desc = document.getElementById('email-desc');
 
 mails.map((mail, index) => {
   // get the current row count
@@ -100,14 +106,21 @@ mails.map((mail, index) => {
   // Inset add total row and get it
   var row = inbox.insertRow(rowCount);
   row.classList.add('mail__row');
-  row.setAttribute("data-row-id", index)
+  row.setAttribute('data-row-id', index);
+  row.onclick = function () {
+    inbox.classList.add("hide-element");
+    desc.classList.remove("hide-element");
+    openInbox(mail);
+  };
 
   //Column 1  for checkbox
   var cell1 = row.insertCell(0);
   cell1.innerHTML = `<td onselect="onMailSelect(event)"> <input type="checkbox" /></td>`;
   cell1.classList.add('mail__col__checkbox');
   var checkBox = cell1.firstElementChild;
-  checkBox.onchange = function(){onMailSelect(cell1.parentElement, checkBox.checked);};
+  checkBox.onchange = function () {
+    onMailSelect(cell1.parentElement, checkBox.checked);
+  };
 
   //Column 2  for recipient
   var cell2 = row.insertCell(1);
@@ -124,4 +137,3 @@ mails.map((mail, index) => {
   cell4.innerHTML = ` <td>${mail.date}</td>`;
   cell4.classList.add('mail__col__time');
 });
-

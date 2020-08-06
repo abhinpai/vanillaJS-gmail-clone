@@ -92,6 +92,7 @@ td {
 .mails {
   border-collapse: collapse; }
   .mails .mail__row {
+    cursor: pointer;
     border-bottom: 0.5px solid #d3d3d359; }
     .mails .mail__row .mail__col__checkbox {
       padding: 8px 4px 8px 8px;
@@ -123,6 +124,8 @@ td {
       margin-left: auto;
       padding-left: 0;
       padding-left: 16px; }
+    .mails .mail__row:hover {
+      background: #80808045; }
 
 .select-item {
   background: #fce8e6;
@@ -134,3 +137,6 @@ td {
 
 .mail-selected {
   background: #80808045; }
+
+.hide-element {
+  display: none; }
