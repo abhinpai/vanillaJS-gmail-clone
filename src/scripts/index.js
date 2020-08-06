@@ -1,9 +1,9 @@
 const mails = [
   {
-    from: 'Stackoverflow',
+    from: 'CodeTriage',
     desc:
-      'I have removed every flex property except display:flex on the  contianer. You need the basic implementation with all default values.',
-    date: 'Aug 4',
+      'Sample lorem ipsum',
+    date: 'July 4',
   },
   {
     from: 'Stackoverflow',
@@ -93,7 +93,8 @@ const onMailSelect = (parent, checked) => {
 };
 
 const openInbox = (element) => {
-    console.log(element);
+    desc.innerHTML = `<p>${element.from}</p> <br/> <p>${element.desc}</p> <br/>`;
+    // desc.innerHTML = ``;
 };
 
 // Get the table
